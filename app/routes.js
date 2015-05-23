@@ -1,11 +1,19 @@
 var express = require('express');
-module.exports={
+var router = express.Router();
+var review = require('./models/product')
 
-  var router = express.Router();
+/* Middleware Section */
+router.use(function(req,res,next){
+  console.log('Time :', Date.now());
+  next();
+});
 
-  router.get('/', function(req,res){
-    console.log('hi there');
-    res.json({message :'hi there.'});
+/* Handle Routes */
+router.route('/product')
+
+  /* Handle HTTP POST requests. */
+  .post(function(req,res){
+    res.json({product:req.body.product_name});
   });
 
-}
+module.exports = router;

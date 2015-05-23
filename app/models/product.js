@@ -1,5 +1,8 @@
-var mongoose = require('mongoose');
+/*
+	Database Model for storing product reviews.
+*/
 
+var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var review = new Schema({
